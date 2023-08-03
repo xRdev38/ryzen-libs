@@ -1,6 +1,6 @@
 {
   "name": "@ryzen/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "commonjs",
   "scripts": {
     "copy:npmrc": "nx run core:copy"
