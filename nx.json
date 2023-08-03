@@ -12,10 +12,10 @@
           "lint",
           "test",
           "e2e",
-          "publish",
-          "copy"
+          "build-copy",
+          "publish"
         ],
-        "accessToken": "MjAwZWVlOTMtZjhlZC00MzBmLWIxMzgtNDc0OGFiMGNlMWUyfHJlYWQtd3JpdGU=",
+        "accessToken": "MGQxOWNiNDYtMzJlZS00ODIxLThjMjUtODJjNTU4MDU1YWI0fHJlYWQtd3JpdGU=",
         "parallel": 3
       }
     }
