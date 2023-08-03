@@ -1,0 +1,44 @@
+{
+  "name": "@zeugmo/source",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "build-with-task": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": ".",
+        "commands": [
+          "nx run-many --target=build",
+          "nx run-many --target=copy"
+        ],
+        "parallel": false
+      }
+    },
+    "local-version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": ".",
+        "commands": [
+          "nx run common:version",
+          "nx run core:version",
+          "nx run system:version",
+          "nx run web-api:version"
+        ],
+        "parallel": false
+      }
+    },
+    "local-registry": {
+      "executor": "@nx/js:verdaccio",
+      "options": {
+        "port": 4873,
+        "config": ".verdaccio/config.yml",
+        "storage": "tmp/local-registry/storage"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    }
+  }
+}

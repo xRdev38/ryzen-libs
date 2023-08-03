@@ -1,0 +1,11 @@
+{
+  "name": "@ryzen/core",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "copy:npmrc": "nx run core:copy"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

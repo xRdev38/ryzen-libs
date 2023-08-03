@@ -1,0 +1,11 @@
+{
+  "name": "@ryzen/web-api",
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "copy:npmrc": "nx run web-api:copy"
+  },
+  "publishConfig": {
+    "@zeugmo:registry": "https://registry.npmjs.org/"
+  }
+}
