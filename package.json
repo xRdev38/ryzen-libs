@@ -24,7 +24,10 @@
     "help": "nx help",
     "workspace-generator": "nx workspace-generator"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xRdev38/ryzen-libs.git"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

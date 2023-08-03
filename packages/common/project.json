@@ -14,18 +14,19 @@
         "assets": ["packages/common/*.md"]
       }
     },
-    "copy": {
+    "build-copy": {
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["node tools/scripts/create-npm-rc.mjs common"],
+        "commands": ["nx run common:build","node tools/scripts/create-npm-rc.mjs common"],
         "parallel": false
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs common",
-      "dependsOn": ["build", "copy-script-npm-rc"]
+      "dependsOn": ["build-copy"],
+      "parallel": false
     },
     "lint": {
       "executor": "@nx/linter:eslint",

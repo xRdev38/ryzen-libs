@@ -14,18 +14,19 @@
         "assets": ["packages/core/*.md"]
       }
     },
-    "copy": {
+    "build-copy": {
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["node tools/scripts/create-npm-rc.mjs core"],
+        "commands": ["nx run core:build","node tools/scripts/create-npm-rc.mjs core"],
         "parallel": false
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs core",
-      "dependsOn": ["build", "copy-script-npm-rc"]
+      "dependsOn": ["build-copy"],
+      "parallel": false
     },
     "lint": {
       "executor": "@nx/linter:eslint",

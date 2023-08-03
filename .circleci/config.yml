@@ -44,9 +44,6 @@ jobs:
           name: Run build
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=4
       - run:
-          name: Run copy npmrc
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=copy --parallel=5
-      - run:
           name: run publish
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=publish --parallel=2
       - run:

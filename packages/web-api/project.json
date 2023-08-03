@@ -15,18 +15,19 @@
         "parallel": false
       }
     },
-    "copy": {
+    "build-copy": {
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["node tools/scripts/create-npm-rc.mjs web-api"],
+        "commands": ["nx run web-api:build","node tools/scripts/create-npm-rc.mjs web-api"],
         "parallel": false
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs web-api",
-      "dependsOn": ["build"]
+      "dependsOn": ["build-copy"],
+      "parallel": false
     },
     "lint": {
       "executor": "@nx/linter:eslint",
