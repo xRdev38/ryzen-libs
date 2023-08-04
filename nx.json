@@ -10,9 +10,6 @@
         "cacheableOperations": [
           "lint",
           "test",
-          "build",
-          "build-copy",
-          "publish",
           "e2e"
         ],
         "accessToken": "YjYwNjM0OWEtZDhiNi00YmRkLTgwODYtZmJiYzcyNjQ5MzlkfHJlYWQtd3JpdGU=",

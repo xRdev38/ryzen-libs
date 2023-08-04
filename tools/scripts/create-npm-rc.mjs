@@ -37,7 +37,7 @@ const basePath = path.resolve('./');
 try {
   await copyFiles(`${basePath}/`, `${outputPath}/`, ['.npmrc']);
   console.log(
-    chalk.bold.blue(`Copy.npmrc to ${outputPath} from ${basePath}`)
+    chalk.bold.blue(`Copy.npmrc to ${basePath} from ${outputPath}`)
   );
 } catch (e) {
   console.error(

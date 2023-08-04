@@ -25,7 +25,7 @@ function invariant(condition, message) {
 // Default "tag" to "next" so we won't publish the "latest" tag by accident.
 const [, , name] = process.argv;
 
-const json = JSON.parse(readFileSync(`package.json`).toString())
+const json = JSON.parse(readFileSync(`./packages/${name}/package.json`).toString())
 const version = json.version;
 const tag = `${json.version}`
 
