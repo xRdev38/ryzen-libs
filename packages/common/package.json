@@ -1,6 +1,6 @@
 {
   "name": "@xrdev_38/common",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "type": "commonjs",
   "scripts": {
     "copy:npmrc": "nx run common:copy"
