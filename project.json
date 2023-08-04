@@ -1,5 +1,5 @@
 {
-  "name": "@zeugmo/source",
+  "name": "@ryzen/source",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "targets": {
     "build-with-task": {
@@ -20,7 +20,6 @@
         "commands": [
           "nx run common:version",
           "nx run core:version",
-          "nx run system:version",
           "nx run web-api:version"
         ],
         "parallel": false

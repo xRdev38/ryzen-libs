@@ -25,8 +25,7 @@
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs core",
-      "dependsOn": ["build-copy"],
-      "parallel": false
+      "dependsOn": ["build-copy"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
