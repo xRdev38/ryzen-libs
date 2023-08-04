@@ -23,7 +23,7 @@ jobs:
     docker:
       - image: cimg/node:lts-browsers
     environment:
-      NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+      NX_CLOUD_DISTRIBUTED_EXECUTION: 'false'
     steps:
       - checkout
       - run:
