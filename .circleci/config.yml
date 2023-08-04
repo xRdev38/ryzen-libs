@@ -29,6 +29,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
+      - run:
+          name: Set an echo
+          command: echo $NPM_TOKEN
       - nx/set-shas:
           main-branch-name: 'main'
       - run:
