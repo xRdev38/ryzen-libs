@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "nx": "node ./node_modules/@nrwl/cli/bin/nx",
-    "build:all": "nx run-many --target=build-with-task --all --parallel",
-    "lint:all": "nx run-many --target=lint --all --parallel",
+    "build:all": "nx run-many --target=build-with-task",
+    "lint:all": "nx run-many --target=lint",
     "affected": "nx affected",
     "affected:build": "nx affected:build",
     "affected:e2e": "nx affected:e2e",

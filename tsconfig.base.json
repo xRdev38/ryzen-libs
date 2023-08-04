@@ -18,8 +18,7 @@
       "@zeugmo/common": ["packages/common/src/index.ts"],
       "@zeugmo/core": ["packages/core/src/index.ts"],
       "@zeugmo/system": ["packages/system/src/index.ts"],
-      "@zeugmo/web-api": ["packages/web-api/src/index.ts"],
-      "@zeugmo/widgets": ["packages/widgets/src/index.ts"]
+      "@zeugmo/web-api": ["packages/web-api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "dist", "tmp"]
