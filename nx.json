@@ -9,11 +9,11 @@
       "options": {
         "cacheableOperations": [
           "lint",
+          "test",
           "build",
           "build-copy",
-          "test",
-          "e2e",
-          "publish"
+          "publish",
+          "e2e"
         ],
         "accessToken": "YjYwNjM0OWEtZDhiNi00YmRkLTgwODYtZmJiYzcyNjQ5MzlkfHJlYWQtd3JpdGU=",
         "parallel": 3
