@@ -31,21 +31,24 @@ jobs:
           command: npm ci
       - nx/set-shas:
           main-branch-name: 'main'
+          allow-on-hold-workflow: true
+          error-on-no-successful-workflow: true
+          workflow-name: nx-pipeline
       - run:
           name: Initialize the Nx Cloud distributed CI run
-          command: npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=5
+          command: npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       - run:
           name: Run lint
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint --parallel=3
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint
       - run:
           name: Run test
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=4 --ci --collect-coverage
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --ci --collect-coverage
       - run:
           name: Run build
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=4
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build
       - run:
           name: run publish
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=publish --parallel=2
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=publish
       - run:
           name: Stop all agents
           command: npx nx-cloud stop-all-agents
@@ -59,6 +62,6 @@ workflows:
           name: Nx Cloud Agent << matrix.ordinal >>
           matrix:
             parameters:
-              ordinal: [1, 2, 3, 4, 5]
+              ordinal: [1, 2, 3]
       - main:
           name: Nx Cloud Main

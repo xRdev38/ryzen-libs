@@ -8,14 +8,14 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": [
-          "build",
           "lint",
+          "build",
+          "build-copy",
           "test",
           "e2e",
-          "build-copy",
           "publish"
         ],
-        "accessToken": "MzdiNjAxYzgtYzhkOS00OWNhLTgwN2QtOGYwOTU1ZjhiMjAwfHJlYWQtd3JpdGU=",
+        "accessToken": "YjYwNjM0OWEtZDhiNi00YmRkLTgwODYtZmJiYzcyNjQ5MzlkfHJlYWQtd3JpdGU=",
         "parallel": 3
       }
     }
@@ -28,12 +28,6 @@
       "inputs": [
         "production",
         "^production"
-      ],
-      "outputs": [
-        "{projectRoot}/dist",
-        "{projectRoot}/dist/packages",
-        "{projectRoot}/build",
-        "{projectRoot}/public/build"
       ]
     },
     "lint": {
