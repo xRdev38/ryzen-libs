@@ -29,14 +29,15 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
-      - run:
-          name: Set an echo
-          command: echo $NPM_TOKEN
+          save_cache:
+            paths:
+              - ./node_modules
+            keys: dependencies-{{ checksum "./package.json" }}
       - nx/set-shas:
           main-branch-name: 'main'
       - run:
           name: Initialize the Nx Cloud distributed CI run
-          command: npx nx-cloud start-ci-run --stop-agents-after="publish" --agent-count=3
+          command: npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       - run:
           name: Run lint
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint
@@ -47,12 +48,21 @@ jobs:
           name: Run build
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build
       - run:
-          name: Run publish
-          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=publish
-      - run:
           name: Stop all agents
           command: npx nx-cloud stop-all-agents
           when: always
+
+  build_and_deploy:
+    docker:
+      - image: cimg/node:lts-browsers
+    steps:
+      - checkout
+      - run:
+          name: "My branch"
+          command: echo $CIRCLE_BRANCH
+      - run:
+          name: "My git tag"
+          command: echo "This is pipeline ID << pipeline.git.tag >>"
 
 workflows:
   version: 2
@@ -65,3 +75,5 @@ workflows:
               ordinal: [1, 2, 3]
       - main:
           name: Nx Cloud Main
+      - build_and_deploy:
+          name: Nx Deploy
