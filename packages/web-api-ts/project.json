@@ -1,17 +1,17 @@
 {
-  "name": "web-api",
+  "name": "web-api-ts",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/web-api/src",
+  "sourceRoot": "packages/web-api-ts/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/web-api",
-        "main": "packages/web-api/src/index.ts",
-        "tsConfig": "packages/web-api/tsconfig.lib.json",
-        "assets": ["packages/web-api/*.md"],
+        "outputPath": "dist/packages/web-api-ts",
+        "main": "packages/web-api-ts/src/index.ts",
+        "tsConfig": "packages/web-api-ts/tsconfig.lib.json",
+        "assets": ["packages/web-api-ts/*.md"],
         "parallel": false
       }
     },
@@ -32,14 +32,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/web-api/**/*.ts"]
+        "lintFilePatterns": ["packages/web-api-ts/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/web-api/jest.config.ts",
+        "jestConfig": "packages/web-api-ts/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

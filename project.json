@@ -18,9 +18,9 @@
       "options": {
         "cwd": ".",
         "commands": [
-          "nx run common:version",
-          "nx run core:version",
-          "nx run web-api:version"
+          "nx run common-ts:version",
+          "nx run core-ts:version",
+          "nx run web-api-ts:version"
         ],
         "parallel": false
       }
