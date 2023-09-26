@@ -37,7 +37,7 @@ jobs:
           main-branch-name: 'main'
       - run:
           name: Initialize the Nx Cloud distributed CI run
-          command: npx nx-cloud start-ci-run --stop-agents-after="publish" --agent-count=3
+          command: npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       - run:
           name: Run lint
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=lint
@@ -47,9 +47,6 @@ jobs:
       - run:
           name: Run build
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build
-      - run:
-          name: Run publish
-          command: npx nx run-many --target=publish
       - run:
           name: Stop all agents
           command: npx nx-cloud stop-all-agents

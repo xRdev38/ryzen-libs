@@ -19,13 +19,13 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["nx run core:build","node tools/scripts/create-npm-rc.mjs core"],
+        "commands": ["nx run core-ts:build","node tools/scripts/create-npm-rc.mjs core-ts"],
         "parallel": false
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs core",
-      "dependsOn": ["build-copy"]
+      "command": "node tools/scripts/publish.mjs core-ts",
+      "dependsOn": ["lint","test","build-copy"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",

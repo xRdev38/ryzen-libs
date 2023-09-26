@@ -20,13 +20,13 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["nx run web-api:build","node tools/scripts/create-npm-rc.mjs web-api"],
+        "commands": ["nx run web-api-ts:build","node tools/scripts/create-npm-rc.mjs web-api-ts"],
         "parallel": false
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs web-api",
-      "dependsOn": ["build-copy"]
+      "command": "node tools/scripts/publish.mjs web-api-ts",
+      "dependsOn": ["lint","test","build-copy"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
