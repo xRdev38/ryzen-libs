@@ -15,6 +15,10 @@
     "copy:all": "nx run-many --target=copy",
     "affected:dep-graph": "nx affected:dep-graph",
     "version:all": "nx run @ryzen/source:local-version",
+    "version:core": "nx run core-ts:version",
+    "version:common": "nx run common-ts:version",
+    "version:web-api": "nx run web-api-ts:version",
+    "affected:version": "nx affected --target version",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test:ci": "jest --runInBand",
@@ -44,7 +48,7 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-angular": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
-    "@jscutlery/semver": "^3.0.0",
+    "@jscutlery/semver": "^3.1.0",
     "@nrwl/webpack": "16.5.5",
     "@nx/eslint-plugin": "16.5.5",
     "@nx/jest": "16.5.5",
@@ -79,4 +83,3 @@
   "main": "jest.preset.js",
   "author": ""
 }
-

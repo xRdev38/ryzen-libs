@@ -6,10 +6,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": ".",
-        "commands": [
-          "nx run-many --target=build",
-          "nx run-many --target=copy"
-        ],
+        "commands": ["nx run-many --target=build", "nx run-many --target=copy"],
         "parallel": false
       }
     },

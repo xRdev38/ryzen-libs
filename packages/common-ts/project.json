@@ -19,13 +19,16 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "cwd": ".",
-        "commands": ["nx run common-ts:build","node tools/scripts/create-npm-rc.mjs common-ts"],
+        "commands": [
+          "nx run common-ts:build",
+          "node tools/scripts/create-npm-rc.mjs common-ts"
+        ],
         "parallel": false
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs common-ts",
-      "dependsOn": ["lint","test","build-copy"]
+      "dependsOn": ["lint", "test", "build-copy"]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
